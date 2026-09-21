@@ -90,6 +90,48 @@ h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-.055em;margin:
 .cta h2{font-size:clamp(32px,5vw,56px);letter-spacing:-.04em;margin-bottom:12px}
 .cta p{color:var(--muted);margin-bottom:24px}
 
+
+.platform-grid{
+  max-width:980px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.platform-card{
+  min-height:190px;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.035));
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  transition:transform .3s ease,border-color .3s ease,background .3s ease;
+}
+.platform-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.18);
+  background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.045));
+}
+.platform-card-alt{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));}
+.platform-card-wide{grid-column:1/-1;min-height:170px;align-items:center;}
+.platform-icon{
+  width:46px;height:46px;flex:0 0 46px;border-radius:14px;
+  display:grid;place-items:center;background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.12);font-size:22px;
+}
+.platform-label{display:block;font-size:10px;letter-spacing:.14em;font-weight:800;opacity:.55;margin-bottom:8px;}
+.platform-card h3{margin:0 0 8px;font-size:21px;}
+.platform-card p{margin:0;color:var(--muted);line-height:1.65;max-width:620px;}
+.text-link{display:inline-block;margin-top:18px;font-weight:700;color:inherit;text-decoration:none;}
+.text-link:hover{text-decoration:underline;}
+@media(max-width:700px){
+  .platform-grid{grid-template-columns:1fr}
+  .platform-card-wide{grid-column:auto}
+  .platform-card{padding:22px;border-radius:22px}
+}
+
 .faq{max-width:820px;margin:auto}
 .faq details{
   background:rgba(255,255,255,.045);
@@ -177,7 +219,7 @@ footer{border-top:1px solid var(--border);padding:34px 22px;color:var(--muted)}
   <div class="nav-inner">
     <a class="brand" href="#top"><span class="logo">T</span><span>TRACKEBILITY</span></a>
     <div class="nav-links">
-      <a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#legal">Privacy</a>
+      <a href="#features">Features</a><a href="#how">How it works</a><a href="#where-it-fits">Where it fits</a><a href="#faq">FAQ</a><a href="#legal">Privacy</a>
     </div>
     <a class="nav-cta" href="https://trackability-app.github.io/Trackability" target="_blank" rel="noopener">Open App ↗</a>
     <button class="menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
@@ -268,6 +310,45 @@ footer{border-top:1px solid var(--border);padding:34px 22px;color:var(--muted)}
   <p>Open the live Trackability app and explore the workspace yourself.</p>
   <a class="hero-btn" href="https://trackability-app.github.io/Trackability" target="_blank" rel="noopener">Launch Trackability ↗</a>
 </div>
+
+
+<section id="where-it-fits">
+  <div class="section-head reveal">
+    <span class="eyebrow">Where it fits</span>
+    <h2>Study wherever you are.</h2>
+    <p>Trackability is a web app, so your study workspace stays easy to reach across your everyday devices.</p>
+  </div>
+
+  <div class="platform-grid">
+    <article class="platform-card reveal">
+      <div class="platform-icon">↗</div>
+      <div>
+        <span class="platform-label">USE IT ON</span>
+        <h3>Phone &amp; Tablet</h3>
+        <p>Open Trackability in your mobile or tablet browser to check tasks, start a focus session, update your syllabus and log your progress.</p>
+      </div>
+    </article>
+
+    <article class="platform-card reveal platform-card-alt">
+      <div class="platform-icon">⌘</div>
+      <div>
+        <span class="platform-label">USE IT ON</span>
+        <h3>Mac &amp; Windows</h3>
+        <p>Open the web app in a modern browser on your computer for a larger view of your dashboard, schedule, trackers and study data.</p>
+      </div>
+    </article>
+
+    <article class="platform-card reveal platform-card-wide">
+      <div class="platform-icon">◎</div>
+      <div>
+        <span class="platform-label">ONE WORKSPACE</span>
+        <h3>Pick up where you left off.</h3>
+        <p>Your Trackability workspace is built around the same core study system: plan your work, focus, record what you did and review your progress.</p>
+        <a class="text-link" href="https://trackability-app.github.io/Trackability" target="_blank" rel="noopener">Open Trackability ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
 
 <section id="faq">
   <div class="section-head reveal">
